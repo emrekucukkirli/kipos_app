@@ -105,7 +105,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   decoration: const InputDecoration(
-                    labelText: "Şifre",
+                    labelText: "Şifre (8 Karakter)",
                     icon: Icon(Icons.lock),
                   ),
                   keyboardType: TextInputType.text,
@@ -133,9 +133,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       backgroundColor: MaterialStateProperty.all(
                           Theme.of(context).accentColor),
                       shape: MaterialStateProperty.all(StadiumBorder()),
-                      fixedSize: MaterialStateProperty.all(
-                        Size.fromWidth(250),
-                      ),
                     ),
                   ),
                 ),
@@ -163,9 +160,6 @@ class _RegisterPageState extends State<RegisterPage> {
                       backgroundColor: MaterialStateProperty.all(
                           Theme.of(context).hintColor),
                       shape: MaterialStateProperty.all(StadiumBorder()),
-                      fixedSize: MaterialStateProperty.all(
-                        Size.fromWidth(250),
-                      ),
                     ),
                   ),
                 ),

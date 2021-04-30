@@ -66,14 +66,14 @@ class AboutView extends StatelessWidget {
                             color: Colors.grey[700]),
                       ),
                     ),
+                    Divider(
+                      color: Colors.red,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.all(20),
                       child: Text(
                         "Bu uygulama Dr. Öğretim Üyesi Ahmet Cevahir ÇINAR tarafından yürütülen 3311409 kodlu MOBİL PROGRAMLAMA dersi kapsamında 173311044 numaralı Muhammed Emre Küçükkırlı tarafından 30 Nisan 2021 günü yapılmıştır.",
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey[700]),
+                        style: TextStyle(fontSize: 18, color: Colors.black),
                       ),
                     ),
                   ],

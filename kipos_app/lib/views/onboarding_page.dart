@@ -23,6 +23,7 @@ class OnboardingPage extends StatelessWidget {
                     children: [
                       Image.asset(
                         _controller.onboardingPages[index].onboardImage,
+                        height: MediaQuery.of(context).size.height * .5,
                       ),
                       SizedBox(
                         height: 32.0,

@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   decoration: const InputDecoration(
-                    labelText: "Şifre",
+                    labelText: "Şifre (8 Karakter)",
                     icon: Icon(Icons.lock),
                   ),
                   keyboardType: TextInputType.text,
@@ -132,9 +132,6 @@ class _LoginPageState extends State<LoginPage> {
                       backgroundColor: MaterialStateProperty.all(
                           Theme.of(context).accentColor),
                       shape: MaterialStateProperty.all(StadiumBorder()),
-                      fixedSize: MaterialStateProperty.all(
-                        Size.fromWidth(250),
-                      ),
                     ),
                   ),
                 ),
@@ -162,9 +159,6 @@ class _LoginPageState extends State<LoginPage> {
                       backgroundColor: MaterialStateProperty.all(
                           Theme.of(context).hintColor),
                       shape: MaterialStateProperty.all(StadiumBorder()),
-                      fixedSize: MaterialStateProperty.all(
-                        Size.fromWidth(250),
-                      ),
                     ),
                   ),
                 ),
