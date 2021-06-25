@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:kipos_app/models/coffee_equipment_model.dart';
+import 'package:kipos_app/models/dessert_model.dart';
 
 import 'drawer_widget.dart';
 
-class CoffeeEquipmentPage extends StatelessWidget {
-  final CoffeeEquipment coffeeEquipment;
+class DessertPage extends StatelessWidget {
+  final Dessert dessert;
 
-  const CoffeeEquipmentPage({
+  const DessertPage({
     Key key,
-    @required this.coffeeEquipment,
+    @required this.dessert,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(coffeeEquipment.name),
+          title: Text(dessert.name),
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
@@ -23,15 +23,14 @@ class CoffeeEquipmentPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Image(
-                image: NetworkImage(coffeeEquipment.imgurl),
-                height: MediaQuery.of(context).size.height * .5,
+                image: NetworkImage(dessert.imgurl),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 0),
+                padding: const EdgeInsets.symmetric(vertical: 25),
                 child: Title(
                   color: Colors.red,
                   child: Text(
-                    coffeeEquipment.name,
+                    dessert.name,
                     style: TextStyle(
                         color: Colors.black54,
                         fontSize: 24,
@@ -46,7 +45,7 @@ class CoffeeEquipmentPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       child: Text(
-                        "Detaylar",
+                        "İçindekiler",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -54,7 +53,24 @@ class CoffeeEquipmentPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        coffeeEquipment.description,
+                        dessert.contents,
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      child: Text(
+                        "Hazırlanışı",
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        dessert.preparing,
                         style: TextStyle(
                           fontSize: 20,
                         ),

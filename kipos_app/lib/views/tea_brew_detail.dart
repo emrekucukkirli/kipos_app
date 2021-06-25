@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kipos_app/models/tea_brew_model.dart';
 
+import 'drawer_widget.dart';
+
 class TeaBrewPage extends StatelessWidget {
   final TeaBrew teabrew;
 
@@ -16,6 +18,7 @@ class TeaBrewPage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
+        drawer: KiposDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[

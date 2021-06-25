@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:kipos_app/views/coffee_equipment_view.dart';
 import 'package:kipos_app/views/cofffee_view.dart';
 
+import 'drawer_widget.dart';
+
 class ProductCoffeeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,6 @@ class ProductCoffeeView extends StatelessWidget {
             title: Text('Kahve'),
             centerTitle: true,
             backgroundColor: Colors.red,
-            automaticallyImplyLeading: false,
             bottom: TabBar(
               indicatorColor: Colors.orange,
               indicatorWeight: 5,
@@ -34,6 +35,7 @@ class ProductCoffeeView extends StatelessWidget {
               ],
             ),
           ),
+          drawer: KiposDrawer(),
           body: TabBarView(
             children: [
               CoffeeView(),

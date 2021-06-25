@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Phi Coffee",
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "profession": "Kavrum",
+        "discount": "15%",
+        "city": "Konya",
+        "instagram": "phicoffeeroastery"
+    },
+    {
+        "id": 2,
+        "name": "Kava Coffee",
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "profession": "Kavrum",
+        "discount": "5%",
+        "city": "İstanbul",
+        "instagram": "phicoffeeroastery"
+    },
+    {
+        "id": 3,
+        "name": "Montag Coffee",
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "profession": "3.Nesil Kahve",
+        "discount": "15%",
+        "city": "İstanbul",
+        "instagram": "phicoffeeroastery"
+    },
+    {
+        "id": 4,
+        "name": "Petra Coffee",
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "profession": "Kavrum",
+        "discount": "15%",
+        "city": "İstanbul",
+        "instagram": "phicoffeeroastery"
+    },
+    {
+        "id": 5,
+        "name": "Kronotrop",
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "profession": "Kavrum",
+        "discount": "15%",
+        "city": "İstanbul, Eskişehir, Konya",
+        "instagram": "phicoffeeroastery"
+    },
+    {
+        "id": 6,
+        "name": "Melez Tea",
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "profession": "Çay",
+        "discount": "15%",
+        "city": "İstanbul",
+        "instagram": "phicoffeeroastery"
+    },
+    {
+        "id": 7,
+        "name": "Coffee Deppartment",
+        "about": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
+        "profession": "Kavrum",
+        "discount": "15%",
+        "city": "İstanbul",
+        "instagram": "phicoffeeroastery"
+    }
+]

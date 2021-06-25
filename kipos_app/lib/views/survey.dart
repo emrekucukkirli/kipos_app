@@ -1,14 +1,12 @@
+import 'package:animated_button/animated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:kipos_app/controllers/survey_voter.dart';
+import 'package:kipos_app/services/auth_services.dart';
 import 'package:polls/polls.dart';
 
 import 'home_page.dart';
 
 class SurveyPage extends StatefulWidget {
-  String mail = '';
-  String pasword = '';
-  SurveyPage(String pasword, String mail);
-
   @override
   _SurveyPageState createState() => _SurveyPageState();
 }
@@ -20,19 +18,16 @@ class _SurveyPageState extends State<SurveyPage> {
   double secenek4 = 1.0;
 
   String admin = "admin@gmail.com";
+  String kullanici = "kullanici@gmail.com";
 
   @override
   Widget build(BuildContext context) {
-    var data = [];
-    data = ModalRoute.of(context).settings.arguments;
-    var mail = data[0];
-    var pasword = data[1];
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Ekipman Anketi"),
         automaticallyImplyLeading: false,
         centerTitle: true,
+        backgroundColor: Colors.red,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
@@ -48,22 +43,22 @@ class _SurveyPageState extends State<SurveyPage> {
                 Polls.options(title: 'Aeropress', value: secenek4),
               ],
               question: Text(
-                "Hoşgeldiniz " + data[0] + "\nFavori ekipmanınız hangisi?",
+                "Hoşgeldiniz " + "\nFavori ekipmanınız hangisi?",
                 style: TextStyle(
                   fontSize: 20,
                 ),
               ),
               voteData: surveyVoter,
-              currentUser: data[0],
+              currentUser: kullanici,
               creatorID: this.admin,
-              userChoice: surveyVoter[data[0]],
+              userChoice: surveyVoter[kullanici],
               onVoteBackgroundColor: Colors.cyan,
               leadingBackgroundColor: Colors.cyan,
               backgroundColor: Colors.white,
               onVote: (secim) {
                 print(secim);
                 setState(() {
-                  surveyVoter[data[0]] = secim;
+                  surveyVoter[kullanici] = secim;
                 });
 
                 if (secim == 1) {
@@ -91,26 +86,29 @@ class _SurveyPageState extends State<SurveyPage> {
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
                   width: MediaQuery.of(context).size.width * 1,
-                  child: ElevatedButton.icon(
-                    icon: Icon(
-                      Icons.home,
-                      color: Colors.white,
-                      size: 24.0,
+                  child: Center(
+                    child: AnimatedButton(
+                      child: Text(
+                        'Anasayfaya Git',
+                        style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => homePage()),
+                        );
+                      },
+                      duration: 70,
+                      height: 70,
+                      width: 250,
+                      enabled: true,
+                      shadowDegree: ShadowDegree.dark,
+                      color: Colors.red,
                     ),
-                    label: Text(
-                      'Anasayfaya Git',
-                      style:
-                          TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
-                    ),
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                            Theme.of(context).errorColor)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => homePage()),
-                      );
-                    },
                   ),
                 ),
               ),

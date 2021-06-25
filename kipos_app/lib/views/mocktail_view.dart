@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:kipos_app/models/coffee_model.dart';
-import 'package:kipos_app/services/coffee_services.dart';
+import 'package:kipos_app/models/mocktail_model.dart';
+import 'package:kipos_app/services/mocktail_services.dart';
+import 'package:kipos_app/views/drawer_widget.dart';
 
-import 'coffee_detail.dart';
+import 'moctail_detail.dart';
 
-class CoffeeView extends StatelessWidget {
+class MocktailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: FutureBuilder<List<Coffee>>(
-          future: CoffeeServices.getUsersLocally(context),
+        appBar: AppBar(
+          title: Text('Mocktailler'),
+          centerTitle: true,
+          backgroundColor: Colors.red,
+        ),
+        drawer: KiposDrawer(),
+        body: FutureBuilder<List<Mocktail>>(
+          future: MocktailServices.getUsersLocally(context),
           builder: (context, product) {
-            final coffees = product.data;
+            final mocktails = product.data;
 
             switch (product.connectionState) {
               case ConnectionState.waiting:
@@ -19,26 +26,25 @@ class CoffeeView extends StatelessWidget {
                 if (product.hasError) {
                   return Center(child: Text('Hata'));
                 } else {
-                  return buildCoffees(coffees);
+                  return buildMocktails(mocktails);
                 }
             }
           },
         ),
       );
 
-  Widget buildCoffees(List<Coffee> coffees) => GridView.builder(
-        padding: EdgeInsets.all(4.0),
+  Widget buildMocktails(List<Mocktail> mocktails) => GridView.builder(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 400,
           childAspectRatio: 2 / 6,
           crossAxisSpacing: 0,
-          mainAxisSpacing: 20,
-          mainAxisExtent: 520,
+          mainAxisSpacing: 10,
+          mainAxisExtent: 580,
         ),
         physics: BouncingScrollPhysics(),
-        itemCount: coffees.length,
+        itemCount: mocktails.length,
         itemBuilder: (context, index) {
-          final coffee = coffees[index];
+          final mocktail = mocktails[index];
           return Container(
             alignment: Alignment.bottomCenter,
             child: Card(
@@ -49,30 +55,19 @@ class CoffeeView extends StatelessWidget {
                     onTap: () => Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) =>
-                            CoffeePage(coffee: coffee),
+                            MocktailPage(mocktail: mocktail),
                       ),
                     ),
                     title: Text(
-                      coffee.name + " " + coffee.subname,
+                      mocktail.name,
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    subtitle: Text(
-                      'Cuping Score : ' + coffee.cupingScore,
-                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      'Notalar : ' + coffee.tastingNotes,
-                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                    ),
                   ),
                   Image.network(
-                    coffee.imgurl,
+                    mocktail.imgurl,
                   ),
                 ],
               ),

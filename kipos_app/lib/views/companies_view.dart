@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:kipos_app/models/post_model.dart';
-import 'package:kipos_app/services/post_services.dart';
-import 'package:kipos_app/views/post_detail.dart';
+import 'package:kipos_app/models/companies_model.dart';
+import 'package:kipos_app/services/companies_services.dart';
 
+import 'companies_detail.dart';
 import 'drawer_widget.dart';
 
-class PostView extends StatelessWidget {
+class CompaniesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text("Blog"),
+          title: Text("Anlaşmalı Firmalar"),
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
         drawer: KiposDrawer(),
         body: Padding(
           padding: const EdgeInsets.only(top: 3),
-          child: FutureBuilder<List<Post>>(
-            future: PostServices.getUsersLocally(context),
+          child: FutureBuilder<List<Company>>(
+            future: CompaniesServices.getUsersLocally(context),
             builder: (context, product) {
-              final posts = product.data;
+              final companies = product.data;
 
               switch (product.connectionState) {
                 case ConnectionState.waiting:
@@ -28,7 +28,7 @@ class PostView extends StatelessWidget {
                   if (product.hasError) {
                     return Center(child: Text('Hata'));
                   } else {
-                    return buildPosts(posts);
+                    return buildPosts(companies);
                   }
               }
             },
@@ -36,31 +36,37 @@ class PostView extends StatelessWidget {
         ),
       );
 
-  Widget buildPosts(List<Post> posts) => ListView.builder(
+  Widget buildPosts(List<Company> companies) => ListView.builder(
         physics: BouncingScrollPhysics(),
-        itemCount: posts.length,
+        itemCount: companies.length,
         itemBuilder: (context, index) {
-          final post = posts[index];
+          final company = companies[index];
           return Container(
             decoration: BoxDecoration(
               border: Border(
-                bottom: BorderSide(width: 3.0, color: Colors.grey),
+                bottom: BorderSide(width: 2.0, color: Colors.red),
               ),
             ),
             child: ListTile(
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (BuildContext context) => PostPage(post: post),
+                  builder: (BuildContext context) =>
+                      CompaniesPage(company: company),
                 ),
               ),
+              leading: Text(
+                company.id.toString(),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red),
+              ),
               title: Text(
-                post.title,
+                company.name,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(post.date),
-              leading: Image.network(
-                post.imgurl,
-              ),
+              subtitle: Text(company.profession),
+              trailing: Icon(Icons.arrow_forward_ios_sharp),
             ),
           );
         },

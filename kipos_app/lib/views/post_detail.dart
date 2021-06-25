@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kipos_app/models/post_model.dart';
 
+import 'drawer_widget.dart';
+
 class PostPage extends StatelessWidget {
   final Post post;
 
@@ -16,6 +18,7 @@ class PostPage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
+        drawer: KiposDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[

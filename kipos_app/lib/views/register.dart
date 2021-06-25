@@ -1,57 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:kipos_app/views/survey.dart';
+import 'package:kipos_app/services/auth_services.dart';
 
 import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
-  RegisterPage({Key key}) : super(key: key);
-
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  String mail = '';
-  String pasword = '';
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _interestController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  void kontrol() {
-    if ((mail.length > 10) && (pasword.length == 8)) {
-      var data = [];
-      data.add(mail);
-      data.add(pasword);
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => SurveyPage(pasword, mail),
-          settings: RouteSettings(
-            arguments: data,
-          ),
-        ),
-      );
-    }
-  }
+  AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
-    bool buttonPasif = true;
-    if ((mail.length > 10) && (pasword.length == 8)) {
-      buttonPasif = false;
-    } else {
-      buttonPasif = true;
-    }
-    void _mailKaydet(String text) {
-      setState(() {
-        mail = text;
-      });
-    }
-
-    void _pasworddKaydet(String text) {
-      setState(() {
-        pasword = text;
-      });
-    }
-
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
@@ -69,104 +36,207 @@ class _RegisterPageState extends State<RegisterPage> {
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
-      body: Center(
-        child: SizedBox(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                flex: 1,
+      body: Stack(
+        children: [
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Container(
+                height: size.height * .7,
+                width: size.width * .85,
+                decoration: BoxDecoration(
+                    color: Colors.blue.withOpacity(.75),
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey.withOpacity(.75),
+                          blurRadius: 10,
+                          spreadRadius: 2)
+                    ]),
                 child: Padding(
-                  padding: EdgeInsets.all(8),
-                  child: Image.asset(
-                    "assets/images/ig_logo.png",
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    height: MediaQuery.of(context).size.height * 0.2,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: "Mail Adresiniz",
-                    icon: Icon(Icons.mail),
-                  ),
-                  keyboardType: TextInputType.emailAddress,
-                  onChanged: (text) {
-                    _mailKaydet(text);
-                  },
-                  inputFormatters: [
-                    FilteringTextInputFormatter.singleLineFormatter
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: "Şifre (8 Karakter)",
-                    icon: Icon(Icons.lock),
-                  ),
-                  keyboardType: TextInputType.text,
-                  onChanged: (text) {
-                    _pasworddKaydet(text);
-                  },
-                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                ),
-              ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.12,
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: ElevatedButton(
-                    onPressed: buttonPasif ? null : kontrol,
-                    child: Text(
-                      'Üye Ol',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                      ),
+                  padding: const EdgeInsets.all(10.0),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextField(
+                            controller: _nameController,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                            cursorColor: Colors.white,
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.person,
+                                color: Colors.white,
+                              ),
+                              hintText: 'Kullanıcı adı',
+                              prefixText: ' ',
+                              hintStyle: TextStyle(color: Colors.white),
+                              focusColor: Colors.white,
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                color: Colors.white,
+                              )),
+                              enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                color: Colors.white,
+                              )),
+                            )),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        TextField(
+                          controller: _emailController,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          cursorColor: Colors.white,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.mail,
+                              color: Colors.white,
+                            ),
+                            hintText: 'E-Mail',
+                            prefixText: ' ',
+                            hintStyle: TextStyle(color: Colors.white),
+                            focusColor: Colors.white,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        TextField(
+                          controller: _interestController,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          cursorColor: Colors.white,
+                          keyboardType: TextInputType.multiline,
+                          decoration: InputDecoration(
+                            prefixIcon: Icon(
+                              Icons.contact_support_rounded,
+                              color: Colors.white,
+                            ),
+                            hintText: 'İlgi Alanı',
+                            prefixText: ' ',
+                            hintStyle: TextStyle(color: Colors.white),
+                            focusColor: Colors.white,
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        TextField(
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                            cursorColor: Colors.white,
+                            controller: _passwordController,
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.vpn_key,
+                                color: Colors.white,
+                              ),
+                              hintText: 'Parola',
+                              prefixText: ' ',
+                              hintStyle: TextStyle(color: Colors.white),
+                              focusColor: Colors.white,
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.white,
+                                ),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )),
+                        SizedBox(
+                          height: size.height * 0.02,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            _authService
+                                .createPerson(
+                                    _nameController.text,
+                                    _emailController.text,
+                                    _interestController.text,
+                                    _passwordController.text)
+                                .then((value) {
+                              return Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginPage()));
+                            });
+                          },
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 5),
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(color: Colors.white, width: 2),
+                                //color: colorPrimaryShade,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(30))),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Center(
+                                child: Text(
+                                  "Üye Ol",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()),
+                            );
+                          },
+                          child: Text(
+                            "Zaten Üye Misin?",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        )
+                      ],
                     ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          Theme.of(context).accentColor),
-                      shape: MaterialStateProperty.all(StadiumBorder()),
-                    ),
                   ),
                 ),
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.12,
-                width: MediaQuery.of(context).size.width * 0.8,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
-                    },
-                    child: Text(
-                      "Üye misin?",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                      ),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          Theme.of(context).hintColor),
-                      shape: MaterialStateProperty.all(StadiumBorder()),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

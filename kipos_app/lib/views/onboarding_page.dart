@@ -1,3 +1,4 @@
+import 'package:animated_button/animated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kipos_app/controllers/onboarding_controller.dart';
@@ -78,15 +79,15 @@ class OnboardingPage extends StatelessWidget {
             Positioned(
                 right: 20,
                 bottom: 20,
-                child: FloatingActionButton(
-                  elevation: 0,
+                child: AnimatedButton(
+                  // elevation: 0,
                   child: Obx(
                     () {
                       return Text(
                           _controller.isLastOnboardPage ? 'Başla' : 'Atla');
                     },
                   ),
-                  backgroundColor: Colors.red,
+                  // backgroundColor: Colors.red,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -94,6 +95,12 @@ class OnboardingPage extends StatelessWidget {
                     );
                     // Navigator.pushNamed(context, '/enter');
                   },
+                  duration: 70, // Animaton duration, default is 70 Milliseconds
+                  height: 80, // Button Height, default is 64
+                  width: 80, // Button width, default is 200
+                  enabled: true,
+                  shadowDegree: ShadowDegree.dark,
+                  color: Colors.red,
                 )),
           ],
         ),

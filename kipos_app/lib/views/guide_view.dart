@@ -3,6 +3,8 @@ import 'package:kipos_app/views/coffee_brew_view.dart';
 import 'package:kipos_app/views/tea_brew_view.dart';
 import 'package:kipos_app/views/timer_view.dart';
 
+import 'drawer_widget.dart';
+
 class GuideView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,6 @@ class GuideView extends StatelessWidget {
             title: Text('Demleme Rehberi'),
             centerTitle: true,
             backgroundColor: Colors.red,
-            automaticallyImplyLeading: false,
             bottom: TabBar(
               indicatorColor: Colors.orange,
               indicatorWeight: 5,
@@ -41,6 +42,7 @@ class GuideView extends StatelessWidget {
               ],
             ),
           ),
+          drawer: KiposDrawer(),
           body: TabBarView(
             children: [
               CoffeeBrewView(),

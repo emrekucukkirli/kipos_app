@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:kipos_app/models/post_model.dart';
-import 'package:kipos_app/services/post_services.dart';
-import 'package:kipos_app/views/post_detail.dart';
+import 'package:kipos_app/models/vlog_model.dart';
+import 'package:kipos_app/views/vlog_detail.dart';
+import 'package:kipos_app/services/vlog_services.dart';
 
 import 'drawer_widget.dart';
 
-class PostView extends StatelessWidget {
+class VlogView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text("Blog"),
+          title: Text("Vlog"),
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
         drawer: KiposDrawer(),
         body: Padding(
           padding: const EdgeInsets.only(top: 3),
-          child: FutureBuilder<List<Post>>(
-            future: PostServices.getUsersLocally(context),
+          child: FutureBuilder<List<Vlog>>(
+            future: VlogServices.getUsersLocally(context),
             builder: (context, product) {
-              final posts = product.data;
+              final vlogs = product.data;
 
               switch (product.connectionState) {
                 case ConnectionState.waiting:
@@ -28,7 +28,7 @@ class PostView extends StatelessWidget {
                   if (product.hasError) {
                     return Center(child: Text('Hata'));
                   } else {
-                    return buildPosts(posts);
+                    return buildPosts(vlogs);
                   }
               }
             },
@@ -36,11 +36,11 @@ class PostView extends StatelessWidget {
         ),
       );
 
-  Widget buildPosts(List<Post> posts) => ListView.builder(
+  Widget buildPosts(List<Vlog> vlogs) => ListView.builder(
         physics: BouncingScrollPhysics(),
-        itemCount: posts.length,
+        itemCount: vlogs.length,
         itemBuilder: (context, index) {
-          final post = posts[index];
+          final vlog = vlogs[index];
           return Container(
             decoration: BoxDecoration(
               border: Border(
@@ -50,17 +50,15 @@ class PostView extends StatelessWidget {
             child: ListTile(
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (BuildContext context) => PostPage(post: post),
+                  builder: (BuildContext context) => VlogPage(vlog: vlog),
                 ),
               ),
+              leading: Icon(Icons.video_collection),
               title: Text(
-                post.title,
+                vlog.title,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-              subtitle: Text(post.date),
-              leading: Image.network(
-                post.imgurl,
-              ),
+              trailing: Text(vlog.date),
             ),
           );
         },

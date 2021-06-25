@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:kipos_app/models/tea_model.dart';
 import 'package:kipos_app/services/tea_services.dart';
+import 'package:kipos_app/views/drawer_widget.dart';
 import 'package:kipos_app/views/tea_detail.dart';
 
 class TeaView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Ana Sayfa'),
+          title: Text('Çaylar'),
           centerTitle: true,
           backgroundColor: Colors.red,
-          automaticallyImplyLeading: false,
         ),
+        drawer: KiposDrawer(),
         body: FutureBuilder<List<Tea>>(
           future: CoffeeServices.getUsersLocally(context),
           builder: (context, product) {

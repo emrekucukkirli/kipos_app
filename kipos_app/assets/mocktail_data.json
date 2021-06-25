@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Mocktail Red",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Mocktail Pink",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Mocktail Blue",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Mocktail Yellow",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Mocktail Green",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Mocktail Magenta",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Mocktail Purple",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Mocktail Orange",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Mocktail White",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Mocktail Special",
+        "contents": "3 cl lavanta çayı, 2,5 cl şeftali şurubu, 6 cl taze yeşil elma suyu, 3cl lime suyu, Schweppes Lime & Mint Süslemek için: Kuru lavanta ve yeşil elma dilimleri.",
+        "preparing": "1. Bardağı buzla doldurun, üzerine sırasıyla lavanta çayı, şeftali şurubu, elma suyu ve lime suyunu ilave edip karıştırın. 2. Karışımın üzerini Schweppes Lime & Mint ile doldurun. 3. Lavanta dalı ve elma dilimleri ile süsleyip servis edin",
+        "imgurl":"https://kodemre.com/mocktail.jpg"
+    }
+]

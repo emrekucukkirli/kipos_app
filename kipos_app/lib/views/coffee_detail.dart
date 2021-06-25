@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kipos_app/models/coffee_model.dart';
 
+import 'drawer_widget.dart';
+
 class CoffeePage extends StatelessWidget {
   final Coffee coffee;
 
@@ -16,6 +18,7 @@ class CoffeePage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
+        drawer: KiposDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[

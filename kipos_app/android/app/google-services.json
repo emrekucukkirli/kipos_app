@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "908903981134",
+    "project_id": "kipos-fire",
+    "storage_bucket": "kipos-fire.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908903981134:android:516128111c26d4cf83a31f",
+        "android_client_info": {
+          "package_name": "com.example.kipos_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908903981134-9kg4g8pc6u9g3t9mq8ako0jjpl95029k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM7qsSy40H60ml6V7Pma4XCzYnk4pPAqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908903981134-9kg4g8pc6u9g3t9mq8ako0jjpl95029k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

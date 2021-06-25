@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 
+import 'drawer_widget.dart';
+
 class AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,6 +12,7 @@ class AboutView extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red,
       ),
+      drawer: KiposDrawer(),
       body: Column(
         children: [
           Padding(
@@ -72,7 +75,7 @@ class AboutView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(20),
                       child: Text(
-                        "Bu uygulama Dr. Öğretim Üyesi Ahmet Cevahir ÇINAR tarafından yürütülen 3311409 kodlu MOBİL PROGRAMLAMA dersi kapsamında 173311044 numaralı Muhammed Emre Küçükkırlı tarafından 30 Nisan 2021 günü yapılmıştır.",
+                        "Bu uygulama Dr. Öğretim Üyesi Ahmet Cevahir ÇINAR tarafından yürütülen 3311409 kodlu MOBİL PROGRAMLAMA dersi kapsamında 173311044 numaralı Muhammed Emre Küçükkırlı tarafından 25 Haziran 2021 günü yapılmıştır.",
                         style: TextStyle(fontSize: 18, color: Colors.black),
                       ),
                     ),

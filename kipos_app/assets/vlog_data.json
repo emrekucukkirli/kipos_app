@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "title": "V60 Demleme",
+        "date": "23.10.20",
+        "videourl": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+    },
+    {
+        "id":2,
+        "title": "Chemex Demleme",
+        "date": "23.10.20",
+        "videourl": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+    },
+    {
+        "id":3,
+        "title": "Kalita Demleme",
+        "date": "23.10.20",
+        "videourl": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+    },
+    {
+        "id":4,
+        "title": "Jappanesse Drip",
+        "date": "23.10.20",
+        "videourl": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+    },
+    {
+        "id":5,
+        "title": "Mokapot Demleme",
+        "date": "23.10.20",
+        "videourl": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4"
+    }
+]
